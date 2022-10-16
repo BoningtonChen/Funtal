@@ -6,12 +6,21 @@ set(CMAKE_C_STANDARD 23)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fms-extensions")
 
+include_directories(
+        Engine/src
+        Sandbox/src
+)
+
 add_executable(Funtal
 
         # *Engine DIR
-        Engine/src/Test.cpp
-        Engine/src/Test.h
+        Engine/src/Funtal.h
+        Engine/src/Funtal/Core.h
+        Engine/src/Funtal/EntryPoint.h
+
+        Engine/src/Funtal/Application.cpp
+        Engine/src/Funtal/Application.h
 
         # *Sandbox DIR
-        Sandbox/Application.cpp
+        Sandbox/SandboxApp.cpp
         )
