@@ -14,6 +14,7 @@ extern Funtal::Application* Funtal::CreateApplication();
 
 int main(int argc, char** argv)
 {
+    std::cout << "Welcome to Funtal Engine. :)" << std::endl;
     auto app = Funtal::CreateApplication();
     app -> Run();
     delete app;

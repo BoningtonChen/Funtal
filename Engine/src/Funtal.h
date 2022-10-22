@@ -8,9 +8,22 @@
 #endif //FUNTAL_FUNTAL_H
 #pragma once
 
+// ! C dependencies
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+    #include <stdio.h>
+#ifdef __cplusplus
+};
+#endif
+
+// ! C++ dependencies
 #include <iostream>
 #include <cstdio>
+#include <ios>
 
+// ! Funtal Engine dependencies
 #include "Funtal/Application.h"
 
 // ! Entry Point
