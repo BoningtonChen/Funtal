@@ -6,12 +6,6 @@ set(CMAKE_C_STANDARD 23)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fms-extensions")
 
-file(COPY cmake-build-debug/lib/Funtal/libfuntal.dylib DESTINATION lib/Funtal FOLLOW_SYMLINK_CHAIN)
-file(COPY cmake-build-debug/lib/Funtal/libfuntal.a     DESTINATION lib/Funtal FOLLOW_SYMLINK_CHAIN)
-file(COPY cmake-build-debug/lib/Funtal/libfuntal.so    DESTINATION lib/Funtal FOLLOW_SYMLINK_CHAIN)
-
-file(COPY cmake-build-debug/Funtal_App DESTINATION bin/Funtal FOLLOW_SYMLINK_CHAIN)
-
 # ! Funtal 依赖目录和文件
 set(LIB_DIR
         lib/Funtal
@@ -32,6 +26,11 @@ set(FUNTAL_SRC
 
         Funtal/src/Funtal/Log.h
         Funtal/src/Funtal/Log.cpp
+
+        Funtal/src/Funtal/Events/Event.h
+        Funtal/src/Funtal/Events/ApplicationEvent.h
+        Funtal/src/Funtal/Events/KeyEvent.h
+        Funtal/src/Funtal/Events/MouseEvent.h
         )
 set(FUNTAL_LIB
         libfuntal.dylib
@@ -64,12 +63,9 @@ link_directories(
         )
 
 # ! 添加库和可执行文件
-add_library(funtal SHARED
-        ${FUNTAL_SRC}
-        )
-add_executable(Funtal_App
-        ${SANDBOX_SRC}
-        )
+add_library(funtal SHARED ${FUNTAL_SRC})
+
+add_executable(Funtal_App ${SANDBOX_SRC})
 
 # ! 链接库
 target_link_libraries(Funtal_App
