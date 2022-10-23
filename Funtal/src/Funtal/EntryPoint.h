@@ -14,9 +14,10 @@ extern Funtal::Application* Funtal::CreateApplication();
 
 int main(int argc, char** argv)
 {
-    std::ios::sync_with_stdio(false);
+    Funtal::Log::Init();
 
-    std::cout << "Welcome to Funtal Engine. :)" << std::endl;
+   FT_CORE_WARN("Initialized Log!");
+   FT_INFO("Hello! :)");
 
     auto app = Funtal::CreateApplication();
     app -> Run();

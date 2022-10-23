@@ -32,6 +32,7 @@ extern "C"
 
 // * Funtal 依赖项
 #include "Funtal/Application.h"
+#include "Funtal/Log.h"
 
 
 // ! ---程序主入口--- !

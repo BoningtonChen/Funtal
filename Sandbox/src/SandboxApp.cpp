@@ -8,14 +8,8 @@
 class Sandbox : public Funtal::Application
 {
 public:
-    Sandbox()
-    {
-
-    }
-    ~Sandbox()
-    {
-
-    }
+    Sandbox() = default;
+    ~Sandbox() override = default;
 };
 
 Funtal::Application* Funtal::CreateApplication()
