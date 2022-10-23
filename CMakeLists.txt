@@ -6,13 +6,17 @@ set(CMAKE_C_STANDARD 23)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fms-extensions")
 
+file(COPY cmake-build-debug/lib/Funtal/libfuntal.dylib DESTINATION lib/Funtal FOLLOW_SYMLINK_CHAIN)
+file(COPY cmake-build-debug/lib/Funtal/libfuntal.a     DESTINATION lib/Funtal FOLLOW_SYMLINK_CHAIN)
+file(COPY cmake-build-debug/lib/Funtal/libfuntal.so    DESTINATION lib/Funtal FOLLOW_SYMLINK_CHAIN)
+
 # ! Funtal 依赖目录和文件
+set(LIB_DIR
+        lib/Funtal
+        )
 set(FUNTAL_SRC_DIR
         Funtal/
         Funtal/src
-        )
-set(FUNTAL_LIB_DIR
-        Funtal/lib
         )
 set(FUNTAL_SRC
         Funtal/src/Funtal.h
@@ -54,7 +58,7 @@ include_directories(
         ${SPDLOG_INC_DIR}
         )
 link_directories(
-        ${FUNTAL_LIB_DIR}
+        ${LIB_DIR}
         )
 
 # ! 添加库和可执行文件
