@@ -10,6 +10,8 @@ file(COPY cmake-build-debug/lib/Funtal/libfuntal.dylib DESTINATION lib/Funtal FO
 file(COPY cmake-build-debug/lib/Funtal/libfuntal.a     DESTINATION lib/Funtal FOLLOW_SYMLINK_CHAIN)
 file(COPY cmake-build-debug/lib/Funtal/libfuntal.so    DESTINATION lib/Funtal FOLLOW_SYMLINK_CHAIN)
 
+file(COPY cmake-build-debug/Funtal_App DESTINATION bin/Funtal FOLLOW_SYMLINK_CHAIN)
+
 # ! Funtal 依赖目录和文件
 set(LIB_DIR
         lib/Funtal

@@ -29,6 +29,8 @@ Using C++, C, CMAKE, Lua.
     - spdlog
 - Sandbox
   - src
+- bin
+  - Funtal
 - lib
   - Funtal
 - object
