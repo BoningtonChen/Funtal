@@ -2,7 +2,9 @@
 
 <!-- TOC -->
 * [Funtal](#funtal)
+  * [LICENSE](#license)
   * [Description](#description)
+  * [Project Structure](#project-structure)
 <!-- TOC -->
 
 ## LICENSE
