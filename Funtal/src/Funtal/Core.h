@@ -34,3 +34,5 @@
 #else
     #error Funtal UNSUPPORTED Platform, sorry!
 #endif
+
+#define BIT(x) (1 << x)

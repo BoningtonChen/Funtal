@@ -24,24 +24,28 @@ Using C++, C, CMAKE, Lua.
 
 ## Project Structure
 - Funtal
-  - src
-  - vendor
-    - spdlog
-- Sandbox
-  - src
-- bin
   - Funtal
-- lib
-  - Funtal
-- object
-- vendor
+    - src
+      - Funtal
+        - Events
+      - Funtal.h
+    - vendor
+      - spdlog
+  - Sandbox
+    - src
   - bin
-    - premake
-- .gitignore
-- .gitmodules
-- CMakeLists.txt
-- LICENSE
-- README.md
+    - Funtal
+  - lib
+    - Funtal
+  - object
+  - vendor
+    - bin
+      - premake
+  - .gitignore
+  - .gitmodules
+  - CMakeLists.txt
+  - LICENSE
+  - README.md
 
 ## Vendor Dependencies
 - spdlog
