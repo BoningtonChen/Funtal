@@ -14,7 +14,7 @@
 
 namespace Funtal
 {
-    class FUNTAL_API WindowResizeEvent : public Event
+    class FUNTAL_API WindowResizeEvent final : public Event
     {
     public:
         WindowResizeEvent(unsigned int width, unsigned int height)
@@ -39,7 +39,7 @@ namespace Funtal
         unsigned int m_Height;
     };
 
-    class FUNTAL_API WindowCloseEvent : public Event
+    class FUNTAL_API WindowCloseEvent final : public Event
     {
 
     };

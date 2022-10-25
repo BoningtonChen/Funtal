@@ -10,6 +10,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fms-extensions")
 set(LIB_DIR
         lib/Funtal
         )
+
 set(FUNTAL_SRC_DIR
         Funtal/
         Funtal/src
@@ -63,7 +64,7 @@ link_directories(
         )
 
 # ! 添加库和可执行文件
-add_library(funtal SHARED ${FUNTAL_SRC})
+add_library(funtal STATIC MODULE SHARED ${FUNTAL_SRC})
 
 add_executable(Funtal_App ${SANDBOX_SRC})
 

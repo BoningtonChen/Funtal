@@ -79,7 +79,7 @@ namespace Funtal
         int m_Button;
     };
 
-    class FUNTAL_API MouseButtonPressedEvent : public MouseButtonEvent
+    class FUNTAL_API MouseButtonPressedEvent final : public MouseButtonEvent
     {
     public:
         explicit MouseButtonPressedEvent(int button)
@@ -96,7 +96,7 @@ namespace Funtal
         EVENT_CLASS_TYPE(MouseButtonPressed)
     };
 
-    class FUNTAL_API MouseButtonReleasedEvent : public MouseButtonEvent
+    class FUNTAL_API MouseButtonReleasedEvent final : public MouseButtonEvent
     {
     public:
         explicit MouseButtonReleasedEvent(int button)

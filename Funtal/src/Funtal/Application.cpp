@@ -17,7 +17,7 @@ namespace Funtal
 
     void Application::Run()
     {
-        while (true);
+        while (true)
         {
 
         }

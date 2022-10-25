@@ -29,7 +29,7 @@ namespace Funtal
         int m_KeyCode;
     };
 
-    class FUNTAL_API KeyPressedEvent : public KeyEvent
+    class FUNTAL_API KeyPressedEvent final : public KeyEvent
     {
     public:
         KeyPressedEvent(int keycode, int repeatCount)
@@ -53,7 +53,7 @@ namespace Funtal
         int m_RepeatCount;
     };
 
-    class FUNTAL_API KeyReleasedEvent : public KeyEvent
+    class FUNTAL_API KeyReleasedEvent final : public KeyEvent
     {
     public:
         explicit KeyReleasedEvent(int keycode)

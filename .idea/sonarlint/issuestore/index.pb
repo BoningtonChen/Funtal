@@ -1,9 +1,13 @@
 
-Q
-!Funtal/src/Funtal/Application.cpp,4/2/42f46a186399a745e6e6a95c214e45a39a7d0f0d
 O
 Funtal/src/Funtal/Application.h,5/e/5e79ba402e5b8f8ea65c7212d68eecf1412130ff
 I
 Funtal/src/Funtal/Log.cpp,b/0/b05ca59683305a8d08e036e019a2e96a19cded8b
-J
-Sandbox/src/SandboxApp.cpp,b/1/b1271c768e6e99d018397058b4b99be725ee2f6f
+C
+Funtal/src/Funtal.h,1/b/1b750c6e4acbf722fd5b4b5040a5fe7a54155bc4
+\
+,Funtal/vendor/spdlog/include/spdlog/common.h,d/3/d3d17e615bac5b6738827aae83422738965c17d1
+f
+6Funtal/vendor/spdlog/include/spdlog/fmt/bundled/core.h,c/3/c3b4167d80e46ab75a50a5a72a448bdca1cf5c4b
+\
+,Funtal/vendor/spdlog/include/spdlog/logger.h,4/4/4412722b8b4d0e1747055f4825683987c7cf7c65

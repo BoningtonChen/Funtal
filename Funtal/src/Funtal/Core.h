@@ -13,9 +13,9 @@
 #ifdef FT_PLATFORM_MACOS
 
     #ifdef FT_BUILD_DLL
-        #define FUNTAL_API __attribute(( visibility("default") )) __declspec(dllexport)
+        #define FUNTAL_API __attribute(( visibility("default") ))
     #else
-        #define FUNTAL_API __attribute(( visibility("default") )) __declspec(dllimport)
+        #define FUNTAL_API __attribute(( visibility("default") ))
     #endif
 
 #elif FT_PLATFORM_WINDOWS
@@ -27,9 +27,9 @@
 
 #elif FT_PLATFORM_UNIX
     #ifdef FT_BUILD_DLL
-        #define FUNTAL_API __attribute(( visibility("default") )) __declspec(dllimport)
+        #define FUNTAL_API __attribute(( visibility("default") ))
     #else
-        #define FUNTAL_API __attribute(( visibility("default") )) __declspec(dllexport)
+        #define FUNTAL_API __attribute(( visibility("default") ))
     #endif
 #else
     #error Funtal UNSUPPORTED Platform, sorry!
