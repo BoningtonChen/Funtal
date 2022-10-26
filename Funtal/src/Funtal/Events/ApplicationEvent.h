@@ -41,6 +41,37 @@ namespace Funtal
 
     class FUNTAL_API WindowCloseEvent final : public Event
     {
+    public:
+        WindowCloseEvent() = default;
 
+        EVENT_CLASS_TYPE(WindowClose)
+        EVENT_CLASS_CATEGORY(EventCategoryApplication)
+    };
+
+    class FUNTAL_API AppTickEvent final : public Event
+    {
+    public:
+        AppTickEvent() = default;
+
+        EVENT_CLASS_TYPE(AppTick)
+        EVENT_CLASS_CATEGORY(EventCategoryApplication)
+    };
+
+    class FUNTAL_API AppUpdateEvent final : public Event
+    {
+    public:
+        AppUpdateEvent() = default;
+
+        EVENT_CLASS_TYPE(AppUpdate)
+        EVENT_CLASS_CATEGORY(EventCategoryApplication)
+    };
+
+    class FUNTAL_API AppRenderEvent final : public Event
+    {
+    public:
+        AppRenderEvent() = default;
+
+        EVENT_CLASS_TYPE(AppRender)
+        EVENT_CLASS_CATEGORY(EventCategoryApplication)
     };
 }

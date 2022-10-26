@@ -4,22 +4,19 @@
 
 #include "Application.h"
 
+#include "Funtal/Events/ApplicationEvent.h"
+#include "Funtal/Log.h"
+
 namespace Funtal
 {
-    Funtal::Application::Application()
-    {
-
-    }
-    Application::~Application()
-    {
-
-    }
+    Funtal::Application::Application() = default;
+    Application::~Application() = default;
 
     void Application::Run()
     {
-        while (true)
-        {
+        WindowResizeEvent e(1280, 720);
+        FT_TRACE(e);
 
-        }
+        while (true);
     }
 }

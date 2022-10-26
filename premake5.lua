@@ -75,6 +75,7 @@ project "Sandbox"
 
     includedirs
     {
+        "%{prj.name}/src",
         "%{proj.name}/vendor/spdlog/include",
         "Funtal/src"
     }

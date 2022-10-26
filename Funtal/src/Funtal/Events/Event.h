@@ -10,6 +10,7 @@
 
 #include "Funtal/Core.h"
 
+#include <iostream>
 #include <string>
 #include <functional>
 
@@ -53,7 +54,7 @@ namespace Funtal
         [[nodiscard]] virtual int GetCategoryFlags() const = 0;
         [[nodiscard]] virtual std::string ToString() const { return GetName(); }
 
-        inline bool IsIntCategory(EventCategory category)
+        inline bool IsIntCategory(EventCategory category) const
         {
             return GetCategoryFlags()& category;
         }
@@ -75,9 +76,20 @@ namespace Funtal
         template<typename T>
         bool Dispatch(EventFn<T> func)
         {
+            if ( m_Event.GetEventType() == T::GetStaticType() )
+            {
+                m_Event.m_Handled = func( *(T*)& m_Event );
+                return true;
+            }
+            return false;
         }
 
     private:
         Event& m_Event;
     };
+
+    inline std::ostream& operator<< (std::ostream& os, const Event& e)
+    {
+        return os << e.ToString();
+    }
 }

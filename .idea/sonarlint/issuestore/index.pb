@@ -1,6 +1,4 @@
 
-O
-Funtal/src/Funtal/Application.h,5/e/5e79ba402e5b8f8ea65c7212d68eecf1412130ff
 I
 Funtal/src/Funtal/Log.cpp,b/0/b05ca59683305a8d08e036e019a2e96a19cded8b
 C
