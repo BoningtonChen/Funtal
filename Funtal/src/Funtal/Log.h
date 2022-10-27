@@ -8,7 +8,6 @@
 #endif //FUNTAL_LOG_H
 #pragma once
 
-#include <memory>
 
 #include "Core.h"
 

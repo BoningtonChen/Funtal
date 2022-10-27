@@ -6,16 +6,32 @@ set(CMAKE_C_STANDARD 23)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fms-extensions")
 
-# ! Funtal 依赖目录和文件
-set(LIB_DIR
-        lib/Funtal
+# * 平台依赖目录和文件
+set(PLATFORM_DIR
+        Platform/macOS
+        Platform/Windows
+        Platform/Linux
+        )
+set(PLATFORM_SRC
+        Platform/macOS/macOSWindow.h
+        Platform/macOS/macOSWindow.cpp
+
+        Platform/Windows/WindowsWindow.h
+        Platform/Windows/WindowsWindow.cpp
         )
 
+# * Funtal 依赖和文件
+set(FUNTAL_LIB_DIR
+        lib/Funtal
+        )
 set(FUNTAL_SRC_DIR
         Funtal/
         Funtal/src
         )
 set(FUNTAL_SRC
+        Funtal/src/ftpch.h
+        Funtal/src/ftpch.cpp
+
         Funtal/src/Funtal.h
 
         Funtal/src/Funtal/Application.h
@@ -24,6 +40,8 @@ set(FUNTAL_SRC
         Funtal/src/Funtal/Core.h
 
         Funtal/src/Funtal/EntryPoint.h
+
+        Funtal/src/Funtal/Window.h
 
         Funtal/src/Funtal/Log.h
         Funtal/src/Funtal/Log.cpp
@@ -39,6 +57,7 @@ set(FUNTAL_LIB
         libfuntal.so
         )
 
+# * Sandbox应用程序 依赖和文件
 set(SANDBOX_SRC_DIR
         Sandbox/src
         )
@@ -46,30 +65,64 @@ set(SANDBOX_SRC
         Sandbox/src/SandboxApp.cpp
         )
 
-# ! 第三方依赖目录
+# * 第三方依赖目录和库
 set(SPDLOG_INC_DIR
         Funtal/vendor/spdlog/include
         )
 
+set(GLFW_INC_DIR
+        Funtal/vendor/GLFW/include
+        )
+set(GLFW_LIB_DIR
+        Funtal/vendor/GLFW/lib/lib-universal
+        Funtal/vendor/GLFW/lib/lib-x86_64
+        Funtal/vendor/GLFW/lib/lib-arm64
+        )
+set(GLFW_LIB
+        libglfw.3.dylib
+        libglfw3.a
+        )
+
 # ! 链接包含和链接目录
 include_directories(
+        # * 平台特化依赖
+        ${PLATFORM_DIR}
+
         # * Funtal 依赖
         ${FUNTAL_SRC_DIR}
         ${SANDBOX_SRC_DIR}
+
         # * 第三方依赖
+        ${GLFW_INC_DIR}
         ${SPDLOG_INC_DIR}
         )
+
 link_directories(
-        ${LIB_DIR}
+        # * 第三方依赖库
+        ${GLFW_LIB_DIR}
+        # * 项目库
+        ${FUNTAL_LIB_DIR}
         )
 
-# ! 添加库和可执行文件
-add_library(funtal STATIC MODULE SHARED ${FUNTAL_SRC})
+# ! 添加库
+add_library(funtal STATIC MODULE SHARED
+        ${FUNTAL_SRC}
+        ${PLATFORM_SRC}
+        )
 
+# ! 添加可执行文件
 add_executable(Funtal_App ${SANDBOX_SRC})
+
+# ! 设置预编译头文件
+target_precompile_headers(funtal PUBLIC Funtal/src/ftpch.h)
+target_precompile_headers(Funtal_App PUBLIC Funtal/src/ftpch.h)
 
 # ! 链接库
 target_link_libraries(Funtal_App
+        # * 第三方依赖库
+        ${GLFW_LIB}
+
+        # * 项目库
         ${FUNTAL_LIB}
         pthread
         )

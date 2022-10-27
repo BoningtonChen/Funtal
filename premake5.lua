@@ -23,6 +23,9 @@ project "Funtal"
     targetdir ("bin/" .. outputdir .. "/%{prj.name}")
     objdir ("object/" .. outputdir .. "/%{prj.name}")
 
+    pchheader "ftpch.h"
+    pchsource "Funtal/src/ftpch.cpp"
+
     files
     {
         "%{proj.name}/src/**.h",

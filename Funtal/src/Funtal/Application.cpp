@@ -1,6 +1,7 @@
 //
 // Created by 陈奕锟 on 2022/10/23.
 //
+#include "ftpch.h"
 
 #include "Application.h"
 
@@ -9,14 +10,17 @@
 
 namespace Funtal
 {
-    Funtal::Application::Application() = default;
+    Funtal::Application::Application()
+    {
+        m_Window = std::unique_ptr<Window>( Window::Create() );
+    }
     Application::~Application() = default;
 
     void Application::Run()
     {
-        WindowResizeEvent e(1280, 720);
-        FT_TRACE(e);
-
-        while (true);
+        while (m_Running)
+        {
+            m_Window -> OnUpdate();
+        }
     }
 }

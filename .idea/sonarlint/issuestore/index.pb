@@ -1,6 +1,4 @@
 
-I
-Funtal/src/Funtal/Log.cpp,b/0/b05ca59683305a8d08e036e019a2e96a19cded8b
 C
 Funtal/src/Funtal.h,1/b/1b750c6e4acbf722fd5b4b5040a5fe7a54155bc4
 \
@@ -9,3 +7,7 @@ f
 6Funtal/vendor/spdlog/include/spdlog/fmt/bundled/core.h,c/3/c3b4167d80e46ab75a50a5a72a448bdca1cf5c4b
 \
 ,Funtal/vendor/spdlog/include/spdlog/logger.h,4/4/4412722b8b4d0e1747055f4825683987c7cf7c65
+J
+Sandbox/src/SandboxApp.cpp,b/1/b1271c768e6e99d018397058b4b99be725ee2f6f
+N
+Funtal/src/Funtal/EntryPoint.h,6/8/686d6b7e70845c335660402745609001e754edc5
