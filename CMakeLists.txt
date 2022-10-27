@@ -9,13 +9,13 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fms-extensions")
 
 # * 平台依赖目录和文件
 set(PLATFORM_DIR
-        Platform/macOS
+        Platform/Unix
         Platform/Windows
         Platform/Linux
         )
 set(PLATFORM_SRC
-        Platform/macOS/macOSWindow.h
-        Platform/macOS/macOSWindow.cpp
+        Platform/Unix/macOSWindow.h
+        Platform/Unix/macOSWindow.cpp
 
         Platform/Windows/WindowsWindow.h
         Platform/Windows/WindowsWindow.cpp

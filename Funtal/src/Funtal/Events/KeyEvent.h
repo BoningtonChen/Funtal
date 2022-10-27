@@ -66,6 +66,6 @@ namespace Funtal
             return ss.str();
         }
 
-        EVENT_CLASS_TYPE(KeReleased)
+        EVENT_CLASS_TYPE(KeyReleased)
     };
 }

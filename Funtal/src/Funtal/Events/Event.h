@@ -10,8 +10,6 @@
 
 #include "Funtal/Core.h"
 
-
-
 namespace Funtal
 {
     // * 事件系统主要用于阻塞当前事件
@@ -22,7 +20,7 @@ namespace Funtal
         None = 0,
         WindowClose, WindowResize, WindowFocus, WindowMoved,
         AppTick, AppUpdate, AppRender,
-        KeyPressed, KeReleased,
+        KeyPressed, KeyReleased,
         MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
     };
 
