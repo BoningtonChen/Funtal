@@ -8,11 +8,6 @@ namespace Funtal
 {
     static bool s_GLFWInitialized = false;
 
-    Window* Window::Create(const Funtal::WindowProps &props)
-    {
-        return new WindowsWindow(props);
-    }
-
     WindowsWindow::WindowsWindow(const Funtal::WindowProps &props)
     {
         Init(props);

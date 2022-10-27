@@ -35,7 +35,6 @@ extern "C"
 
 
 #ifdef FT_PLATFORM_MACOS
-
 #ifdef FT_BUILD_DLL
         #define FUNTAL_API __attribute(( visibility("default") ))
     #else

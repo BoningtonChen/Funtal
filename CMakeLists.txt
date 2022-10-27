@@ -4,6 +4,7 @@ project(Funtal)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_C_STANDARD 23)
 
+# * 用于添加动态链接库
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fms-extensions")
 
 # * 平台依赖目录和文件
@@ -118,9 +119,12 @@ target_precompile_headers(funtal PUBLIC Funtal/src/ftpch.h)
 target_precompile_headers(Funtal_App PUBLIC Funtal/src/ftpch.h)
 
 # ! 链接库
-target_link_libraries(Funtal_App
+target_link_libraries(funtal
         # * 第三方依赖库
         ${GLFW_LIB}
+        )
+target_link_libraries(Funtal_App
+        # * 第三方依赖库
 
         # * 项目库
         ${FUNTAL_LIB}
@@ -129,8 +133,9 @@ target_link_libraries(Funtal_App
 
 # ! 链接 APPLE OpenGL 库
 if (APPLE)
-    foreach(EXECUTABLE ${EXECUTABLE_OUTPUT_PATH})
-        target_link_libraries(${EXECUTABLE} "-framework OpenGL")
-        target_link_libraries(${EXECUTABLE} "-framework GLUT")
-    endforeach()
+    target_link_libraries(funtal "-framework OpenGL")
+    target_link_libraries(funtal "-framework GLUT")
+
+    target_link_libraries(Funtal_App "-framework OpenGL")
+    target_link_libraries(Funtal_App "-framework GLUT")
 endif()
