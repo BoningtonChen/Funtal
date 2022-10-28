@@ -1,14 +1,37 @@
 //
 // Created by 陈奕锟 on 2022/10/23.
 //
+#define FT_PLATFORM_MACOS
+
 #include <Funtal.h>
 
-#define FT_PLATFORM_MACOS
+class ExampleLayer : public Funtal::Layer
+{
+public:
+    ExampleLayer()
+        : Layer("Example")
+    {
+
+    }
+
+    void OnUpdate() override
+    {
+        FT_INFO("ExampleLayer::Update");
+    }
+
+    void OnEvent(Funtal::Event& event) override
+    {
+        FT_TRACE("{0}", event);
+    }
+};
 
 class Sandbox : public Funtal::Application
 {
 public:
-    Sandbox() = default;
+    Sandbox()
+    {
+        PushLayer( new ExampleLayer() );
+    }
     ~Sandbox() override = default;
 };
 

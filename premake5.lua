@@ -55,10 +55,17 @@ project "Funtal"
 
     filter "configuration:Debug"
         defines "FT_DEBUG"
+        buildoptions "/MDd"
+        symbols "On"
+
+    filter "configuration:Release"
+        defines "FT_DEBUG"
+        buildoptions "/MD"
         symbols "On"
 
     filter "configuration:Dist"
         defines "FT_DIST"
+        buildoptions "/MD"
         optimize "On"
 
 

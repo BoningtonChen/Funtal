@@ -51,6 +51,11 @@ set(FUNTAL_SRC
         Funtal/src/Funtal/Events/ApplicationEvent.h
         Funtal/src/Funtal/Events/KeyEvent.h
         Funtal/src/Funtal/Events/MouseEvent.h
+
+        Funtal/src/Funtal/Layer.h
+        Funtal/src/Funtal/Layer.cpp
+        Funtal/src/Funtal/LayerStack.h
+        Funtal/src/Funtal/LayerStack.cpp
         )
 set(FUNTAL_LIB
         libfuntal.dylib
@@ -82,6 +87,7 @@ set(GLFW_LIB_DIR
 set(GLFW_LIB
         libglfw.3.dylib
         libglfw3.a
+        libglfw3.so
         )
 
 # ! 链接包含和链接目录
@@ -109,10 +115,15 @@ link_directories(
 add_library(funtal STATIC MODULE SHARED
         ${FUNTAL_SRC}
         ${PLATFORM_SRC}
+        ${SANDBOX_SRC}
         )
 
 # ! 添加可执行文件
-add_executable(Funtal_App ${SANDBOX_SRC})
+add_executable(Funtal_App
+        ${FUNTAL_SRC}
+        ${PLATFORM_SRC}
+        ${SANDBOX_SRC}
+        )
 
 # ! 设置预编译头文件
 target_precompile_headers(funtal PUBLIC Funtal/src/ftpch.h)
@@ -122,10 +133,11 @@ target_precompile_headers(Funtal_App PUBLIC Funtal/src/ftpch.h)
 target_link_libraries(funtal
         # * 第三方依赖库
         ${GLFW_LIB}
+        ${FUNTAL_LIB}
         )
 target_link_libraries(Funtal_App
         # * 第三方依赖库
-
+        ${GLFW_LIB}
         # * 项目库
         ${FUNTAL_LIB}
         pthread

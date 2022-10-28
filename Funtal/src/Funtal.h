@@ -30,6 +30,7 @@ extern "C"
 
 // * Funtal 依赖项
 #include "Funtal/Application.h"
+#include "Funtal/Layer.h"
 #include "Funtal/Log.h"
 
 
