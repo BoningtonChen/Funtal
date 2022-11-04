@@ -4,6 +4,8 @@
 
 #ifndef FUNTAL_FTPCH_H
     #define FT_PLATFORM_MACOS
+    #define FT_BUILD_DLL
+    #define GLFW_INCLUDE_NONE
 #define FUNTAL_FTPCH_H
 
 #endif //FUNTAL_FTPCH_H
@@ -23,16 +25,6 @@
 #include <unordered_set>
 
 #include "Funtal/Log.h"
-
-#ifdef __cplusplus
-extern "C"
-{
-#endif
-    #include <stdio.h>
-#ifdef __cplusplus
-};
-#endif
-
 
 #ifdef FT_PLATFORM_MACOS
 #ifdef FT_BUILD_DLL
@@ -59,4 +51,4 @@ extern "C"
 #error Funtal UNSUPPORTED Platform, sorry!
 #endif
 
-#define BIT(x) (1 << (x))
+#define BIT(x) ( 1 << (x) )

@@ -1,11 +1,19 @@
-cmake_minimum_required(VERSION 3.23)
+cmake_minimum_required(VERSION 3.20)
 project(Funtal)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_C_STANDARD 23)
 
-# * 用于添加动态链接库
+# * 用于添加动态链接库和C、C++混编
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fms-extensions")
+set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++23")
+set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c23")
+
+# * 强制使用CXX编译.c文件，防止出现C++出现找不到头文件STL的情况
+set(C_SOURCE_FILES
+        Funtal/vendor/GLAD/src/glad.c
+        )
+set_source_files_properties(${C_SOURCE_FILES} PROPERTIES LANGUAGE CXX)
 
 # * 平台依赖目录和文件
 set(PLATFORM_DIR
@@ -90,18 +98,28 @@ set(GLFW_LIB
         libglfw3.so
         )
 
+set(GLAD_INC_DIR
+        Funtal/vendor/GLAD/include
+        )
+set(GLAD_SRC
+        Funtal/vendor/GLAD/include/glad/glad.h
+        Funtal/vendor/GLAD/include/KHR/khrplatform.h
+        Funtal/vendor/GLAD/src/glad.c
+        )
+
 # ! 链接包含和链接目录
 include_directories(
+        # * 第三方依赖
+        ${GLAD_INC_DIR}
+        ${GLFW_INC_DIR}
+        ${SPDLOG_INC_DIR}
+
         # * 平台特化依赖
         ${PLATFORM_DIR}
 
         # * Funtal 依赖
         ${FUNTAL_SRC_DIR}
         ${SANDBOX_SRC_DIR}
-
-        # * 第三方依赖
-        ${GLFW_INC_DIR}
-        ${SPDLOG_INC_DIR}
         )
 
 link_directories(
@@ -113,6 +131,7 @@ link_directories(
 
 # ! 添加库
 add_library(funtal STATIC MODULE SHARED
+        ${GLAD_SRC}
         ${FUNTAL_SRC}
         ${PLATFORM_SRC}
         ${SANDBOX_SRC}
@@ -120,6 +139,7 @@ add_library(funtal STATIC MODULE SHARED
 
 # ! 添加可执行文件
 add_executable(Funtal_App
+        ${GLAD_SRC}
         ${FUNTAL_SRC}
         ${PLATFORM_SRC}
         ${SANDBOX_SRC}
@@ -133,7 +153,9 @@ target_precompile_headers(Funtal_App PUBLIC Funtal/src/ftpch.h)
 target_link_libraries(funtal
         # * 第三方依赖库
         ${GLFW_LIB}
+        # * 项目依赖库
         ${FUNTAL_LIB}
+        pthread
         )
 target_link_libraries(Funtal_App
         # * 第三方依赖库

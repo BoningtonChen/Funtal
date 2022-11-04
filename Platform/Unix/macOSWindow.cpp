@@ -52,6 +52,11 @@ namespace Funtal
             s_GLFWInitialized = true;
         }
 
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
+        glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+        glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+
         m_Window = glfwCreateWindow(
                 (int)props.Width, (int)props.Height,
                 m_Data.Title.c_str(),
@@ -59,6 +64,10 @@ namespace Funtal
                 );
 
         glfwMakeContextCurrent(m_Window);
+
+        int status = gladLoadGLLoader( (GLADloadproc)glfwGetProcAddress );
+        FT_CORE_ASSERT(status, "Failed to initialize GLAD!");
+
         glfwSetWindowUserPointer(m_Window, &m_Data);
         SetVSync(true);
 
