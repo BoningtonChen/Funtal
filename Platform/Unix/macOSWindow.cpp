@@ -9,6 +9,8 @@
 #include "Funtal/Events/MouseEvent.h"
 #include "Funtal/Events/KeyEvent.h"
 
+#include <glad/glad.h>
+
 namespace Funtal
 {
     static bool s_GLFWInitialized = false;
