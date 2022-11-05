@@ -33,6 +33,8 @@ extern "C"
 #include "Funtal/Layer.h"
 #include "Funtal/Log.h"
 
+#include "Funtal/Imgui/ImGuiLayer.h"
+
 
 // ! ---程序主入口--- !
 #include "Funtal/EntryPoint.h"

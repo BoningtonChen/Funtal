@@ -12,7 +12,7 @@
 
 namespace Funtal
 {
-    class ImGuiLayer : public Layer
+    class FUNTAL_API ImGuiLayer : public Layer
     {
     public:
         ImGuiLayer();
@@ -24,6 +24,6 @@ namespace Funtal
         void OnEvent(Event& event) override;
 
     private:
-
+        float m_Time = 0.0f;
     };
 }

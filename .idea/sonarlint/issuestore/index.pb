@@ -19,18 +19,12 @@ N
 Funtal/src/Funtal/LayerStack.h,7/e/7e36d0364594f3f1987ffb600bb50bd9ecd2b222
 P
  Funtal/src/Funtal/LayerStack.cpp,2/a/2a538f1d202538c0207ee97ae28b92426b7dc3f4
-C
-Funtal/src/Funtal.h,1/b/1b750c6e4acbf722fd5b4b5040a5fe7a54155bc4
-O
-Funtal/src/Funtal/Application.h,5/e/5e79ba402e5b8f8ea65c7212d68eecf1412130ff
 e
 5cmake-build-debug/CMakeFiles/Funtal.dir/cmake_pch.hxx,a/3/a3b666ecabc2480a5e302f87fb294cf48771e672
 \
 ,Funtal/vendor/GLAD/include/KHR/khrplatform.h,e/7/e71e95ee022bf923042888639ce856f350a50708
 V
 &Funtal/vendor/GLAD/include/glad/glad.h,c/9/c9f32953895da24857dcb7551a241e270727e037
-N
-Funtal/src/Funtal/EntryPoint.h,6/8/686d6b7e70845c335660402745609001e754edc5
 P
  Platform/Windows/WindowsWindow.h,d/b/db0396686661c75f71463706fb4f3c1155656892
 M

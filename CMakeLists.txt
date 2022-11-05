@@ -16,6 +16,7 @@ set(C_SRC
         )
 set_source_files_properties(${C_SRC} PROPERTIES LANGUAGE CXX)
 
+
 # * 平台依赖目录和文件
 set(PLATFORM_DIR
         Platform/Unix
@@ -123,6 +124,23 @@ set(IMGUI_INC_DIR
         Funtal/vendor/imgui
         Funtal/vendor/imgui/backends
         )
+set(IMGUI_SRC
+        Funtal/vendor/imgui/imconfig.h
+
+        Funtal/vendor/imgui/imgui.h
+        Funtal/vendor/imgui/imgui.cpp
+
+        Funtal/vendor/imgui/imgui_internal.h
+
+        Funtal/vendor/imgui/imgui_demo.cpp
+        Funtal/vendor/imgui/imgui_draw.cpp
+        Funtal/vendor/imgui/imgui_tables.cpp
+        Funtal/vendor/imgui/imgui_widgets.cpp
+
+        Funtal/vendor/imgui/imstb_rectpack.h
+        Funtal/vendor/imgui/imstb_textedit.h
+        Funtal/vendor/imgui/imstb_truetype.h
+        )
 
 # ! 链接包含和链接目录
 include_directories(
@@ -149,8 +167,11 @@ link_directories(
 
 # ! 添加库
 add_library(funtal STATIC MODULE SHARED
+        # * 第三方源
         ${GLAD_SRC}
+        ${IMGUI_SRC}
 
+        # * 项目源
         ${FUNTAL_SRC}
         ${PLATFORM_SRC}
         ${SANDBOX_SRC}
@@ -158,8 +179,11 @@ add_library(funtal STATIC MODULE SHARED
 
 # ! 添加可执行文件
 add_executable(Funtal_App
+        # * 第三方源
         ${GLAD_SRC}
+        ${IMGUI_SRC}
 
+        # * 项目源
         ${FUNTAL_SRC}
         ${PLATFORM_SRC}
         ${SANDBOX_SRC}
