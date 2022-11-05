@@ -1,38 +1,43 @@
 cmake_minimum_required(VERSION 3.20)
-project(Funtal)
+project(Funtal CXX C)
 
+# * 设置 C/C++ 语言版本
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_C_STANDARD 23)
 
-# * 用于添加动态链接库和C、C++混编
+# * 用于添加动态链接库和 C/C++ 混编
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fms-extensions")
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++23")
 set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c23")
 
 # * 强制使用CXX编译.c文件，防止出现C++出现找不到头文件STL的情况
-set(C_SOURCE_FILES
+set(C_SRC
         Funtal/vendor/GLAD/src/glad.c
         )
-set_source_files_properties(${C_SOURCE_FILES} PROPERTIES LANGUAGE CXX)
+set_source_files_properties(${C_SRC} PROPERTIES LANGUAGE CXX)
 
 # * 平台依赖目录和文件
 set(PLATFORM_DIR
         Platform/Unix
         Platform/Windows
         Platform/Linux
+        Platform/OpenGL
         )
 set(PLATFORM_SRC
+        # * Unix(macOS)
         Platform/Unix/macOSWindow.h
         Platform/Unix/macOSWindow.cpp
 
+        # * Windows
         Platform/Windows/WindowsWindow.h
         Platform/Windows/WindowsWindow.cpp
+
+        # * OpenGL
+        Platform/OpenGL/ImGuiOpenGLRenderer.h
+        Platform/OpenGL/ImGuiOpenGLRenderer.cpp
         )
 
 # * Funtal 依赖和文件
-set(FUNTAL_LIB_DIR
-        lib/Funtal
-        )
 set(FUNTAL_SRC_DIR
         Funtal/
         Funtal/src
@@ -64,6 +69,12 @@ set(FUNTAL_SRC
         Funtal/src/Funtal/Layer.cpp
         Funtal/src/Funtal/LayerStack.h
         Funtal/src/Funtal/LayerStack.cpp
+
+        Funtal/src/Funtal/Imgui/ImGuiLayer.h
+        Funtal/src/Funtal/Imgui/ImGuiLayer.cpp
+        )
+set(FUNTAL_LIB_DIR
+        lib/Funtal
         )
 set(FUNTAL_LIB
         libfuntal.dylib
@@ -102,9 +113,15 @@ set(GLAD_INC_DIR
         Funtal/vendor/GLAD/include
         )
 set(GLAD_SRC
-        Funtal/vendor/GLAD/include/glad/glad.h
         Funtal/vendor/GLAD/include/KHR/khrplatform.h
+
+        Funtal/vendor/GLAD/include/glad/glad.h
         Funtal/vendor/GLAD/src/glad.c
+        )
+
+set(IMGUI_INC_DIR
+        Funtal/vendor/imgui
+        Funtal/vendor/imgui/backends
         )
 
 # ! 链接包含和链接目录
@@ -113,8 +130,9 @@ include_directories(
         ${GLAD_INC_DIR}
         ${GLFW_INC_DIR}
         ${SPDLOG_INC_DIR}
+        ${IMGUI_INC_DIR}
 
-        # * 平台特化依赖
+        # * 平台适配依赖
         ${PLATFORM_DIR}
 
         # * Funtal 依赖
@@ -132,6 +150,7 @@ link_directories(
 # ! 添加库
 add_library(funtal STATIC MODULE SHARED
         ${GLAD_SRC}
+
         ${FUNTAL_SRC}
         ${PLATFORM_SRC}
         ${SANDBOX_SRC}
@@ -140,6 +159,7 @@ add_library(funtal STATIC MODULE SHARED
 # ! 添加可执行文件
 add_executable(Funtal_App
         ${GLAD_SRC}
+
         ${FUNTAL_SRC}
         ${PLATFORM_SRC}
         ${SANDBOX_SRC}
