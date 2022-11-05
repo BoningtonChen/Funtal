@@ -285,3 +285,5 @@ Apache 2.0 LICENCE
    limitations under the License.
 
 ```
+
+© Bonity, 2022
