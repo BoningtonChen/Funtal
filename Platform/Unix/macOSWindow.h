@@ -4,7 +4,7 @@
 
 #ifndef FUNTAL_MACOSWINDOW_H
 #define FUNTAL_MACOSWINDOW_H
-
+    #define GLFW_INCLUDE_NONE
 #endif //FUNTAL_MACOSWINDOW_H
 #pragma once
 

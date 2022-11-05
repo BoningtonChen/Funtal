@@ -23,6 +23,7 @@ extern "C"
 {
 #endif
     #include <stdio.h>
+    #include <stdint.h>
 #ifdef __cplusplus
 }
 #endif

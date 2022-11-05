@@ -10,6 +10,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fms-extensions")
 set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++23")
 set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c23")
 
+
 # * 强制使用CXX编译.c文件，防止出现C++出现找不到头文件STL的情况
 set(C_SRC
         Funtal/vendor/GLAD/src/glad.c
@@ -217,3 +218,11 @@ if (APPLE)
     target_link_libraries(Funtal_App "-framework OpenGL")
     target_link_libraries(Funtal_App "-framework GLUT")
 endif()
+
+# * 设置自动化拷贝生成的库文件
+set(CMAKE_GENERATED_LIB
+        cmake-build-debug/libfuntal.a
+        cmake-build-debug/libfuntal.dylib
+        cmake-build-debug/libfuntal.so
+        )
+execute_process(COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_GENERATED_LIB} ${FUNTAL_LIB_DIR})

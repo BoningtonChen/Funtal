@@ -55,7 +55,7 @@
 
 // * 用于实现 MSVC 的 __debugbreak()
 #if defined(__APPLE__) && defined(__aarch64__)
-#define debugbreak() __asm__ __volatile__(
+#define __debugbreak() __asm__ __volatile__(
     "   mov    x0, %x0;
 " /* pid                */
     "   mov    x1, #0x11;
@@ -69,7 +69,7 @@
     ::  "r"(getpid())
     :   "x0", "x1", "x16", "memory")
 #elif defined(__APPLE__) && defined(__arm__)
-#define debugbreak() __asm__ __volatile__(
+#define __debugbreak() __asm__ __volatile__(
     "   mov    r0, %0;
 " /* pid                */
     "   mov    r1, #0x11;
@@ -83,5 +83,5 @@
     ::  "r"(getpid())
     :   "r0", "r1", "r12", "memory")
 #elif defined(__APPLE__) && ( defined(__i386__) || defined(__x86_64__) )
-#define debugbreak() __asm__ __volatile__("int $3; mov %eax, %eax")
+#define __debugbreak() __asm__ __volatile__("int $3; mov %eax, %eax")
 #endif
