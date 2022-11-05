@@ -11,6 +11,7 @@
   * [Project Structure](#project-structure)
   * [Vendor Dependencies](#vendor-dependencies)
   * [Supplementary Explanation](#supplementary-explanation)
+  * [Technical Comments](#technical-comments)
   * [Open Source LICENCE for FUNTAL](#open-source-licence-for-funtal)
 <!-- TOC -->
 
@@ -78,6 +79,10 @@ The Project is still on an early-state of development, a lot of functions haven'
 Since this is just a SINGLE-PERSON-BUILD program, it is quite difficult for me to do cross-platform adaptation.\
 So the premake5 script which is used for Visual Studio to generate projects is temporarily abadoned.\
 Anyone who is specialized in C++, CMake, Lua or cross-platform program architecture is welcomed to contact me. :)
+
+## Technical Comments
+- I mainly use Apple LLVM Compiler on my local machine, which mainly is a 2017 MacBook Pro, however as I know if you are using other Compilers such as GCC, you might come across a bit of issues. 
+- You may also get strange Inline Errors on Windows platform. This is quite common. Sometimes the .dylib and .exe can also be compiled, while sometimes not. Anyway this early project is still quite fragile and unstable, so please be careful with a bunch of ANNOYING ERRORS. :(
 
 ## Open Source LICENCE for FUNTAL
 Apache 2.0 LICENCE
