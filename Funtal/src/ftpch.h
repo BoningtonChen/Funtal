@@ -3,9 +3,6 @@
 //
 
 #ifndef FUNTAL_FTPCH_H
-    #define FT_PLATFORM_MACOS
-    #define FT_BUILD_DLL
-    #define GLFW_INCLUDE_NONE
 #define FUNTAL_FTPCH_H
 
 #endif //FUNTAL_FTPCH_H

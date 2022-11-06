@@ -5,9 +5,6 @@
 #ifndef FUNTAL_APPLICATION_H
 #define FUNTAL_APPLICATION_H
 
-    #define FT_PLATFORM_MACOS
-    #define FT_BUILD_DLL
-
 #endif //FUNTAL_APPLICATION_H
 #pragma once
 
