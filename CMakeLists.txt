@@ -9,8 +9,13 @@ set(CMAKE_C_STANDARD 23)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++23 -fms-extensions")
 set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c23")
 
-# * 添加项目预定义宏环境
-add_definitions(-D FT_PLATFORM_MACOS -D FT_BUILD_DLL -D GLFW_INCLUDE_NONE -D PROJ_DEBUG)
+# * 添加平台适配的项目预定义宏环境
+if(APPLE)
+    add_definitions(-D FT_PLATFORM_MACOS -D FT_BUILD_DLL -D GLFW_INCLUDE_NONE -D PROJ_DEBUG)
+else(MSVC)
+    add_definitions(-D FT_PLATFORM_WINDOWS -D FT_BUILD_DLL -D GLFW_INCLUDE_NONE -D PROJ_DEBUG)
+endif()
+
 
 # * 强制使用CXX编译.c文件，防止出现C++出现找不到头文件STL的情况
 set(C_SRC
@@ -144,6 +149,7 @@ set(IMGUI_SRC
         Funtal/vendor/imgui/imstb_truetype.h
         )
 
+
 # ! 链接包含和链接目录
 include_directories(
         # * 第三方依赖
@@ -167,6 +173,7 @@ link_directories(
         ${FUNTAL_LIB_DIR}
         )
 
+
 # ! 添加库
 add_library(funtal STATIC MODULE SHARED
         # * 第三方源
@@ -178,6 +185,7 @@ add_library(funtal STATIC MODULE SHARED
         ${PLATFORM_SRC}
         ${SANDBOX_SRC}
         )
+
 
 # ! 添加可执行文件
 add_executable(Funtal_App
@@ -191,9 +199,11 @@ add_executable(Funtal_App
         ${SANDBOX_SRC}
         )
 
+
 # ! 设置预编译头文件
 target_precompile_headers(funtal PUBLIC Funtal/src/ftpch.h)
 target_precompile_headers(Funtal_App PUBLIC Funtal/src/ftpch.h)
+
 
 # ! 链接库
 target_link_libraries(funtal
@@ -210,6 +220,7 @@ target_link_libraries(Funtal_App
         ${FUNTAL_LIB}
         pthread
         )
+
 
 # ! 链接 APPLE OpenGL 库
 if (APPLE)

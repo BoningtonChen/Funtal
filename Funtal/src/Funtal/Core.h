@@ -27,7 +27,7 @@
         #define FUNTAL_API __declspec(dllexport)
     #endif
 
-#elif FT_PLATFORM_UNIX
+#elif FT_PLATFORM_LINUX
     #ifdef FT_BUILD_DLL
         #define FUNTAL_API __attribute(( visibility("default") ))
     #else
