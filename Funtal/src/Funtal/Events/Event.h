@@ -20,7 +20,7 @@ namespace Funtal
         None = 0,
         WindowClose, WindowResize, WindowFocus, WindowMoved,
         AppTick, AppUpdate, AppRender,
-        KeyPressed, KeyReleased,
+        KeyPressed, KeyReleased, KeyTyped,
         MouseButtonPressed, MouseButtonReleased, MouseMoved, MouseScrolled
     };
 
@@ -53,7 +53,7 @@ namespace Funtal
         [[nodiscard]] virtual int GetCategoryFlags() const = 0;
         [[nodiscard]] virtual std::string ToString() const { return GetName(); }
 
-        inline bool IsIntCategory(EventCategory category) const
+        [[nodiscard]] inline bool IsInCategory(EventCategory category) const
         {
             return GetCategoryFlags()& category;
         }

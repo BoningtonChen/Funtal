@@ -1,7 +1,6 @@
 //
 // Created by 陈奕锟 on 2022/10/23.
 //
-#define FT_PLATFORM_MACOS
 
 #include <Funtal.h>
 

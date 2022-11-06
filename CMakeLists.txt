@@ -10,7 +10,7 @@ set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++23 -fms-extensions")
 set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c23")
 
 # * 添加项目预定义宏环境
-add_definitions(-D FT_PLATFORM_MACOS -D FT_BUILD_DLL -D GLFW_INCLUDE_NONE)
+add_definitions(-D FT_PLATFORM_MACOS -D FT_BUILD_DLL -D GLFW_INCLUDE_NONE -D PROJ_DEBUG)
 
 # * 强制使用CXX编译.c文件，防止出现C++出现找不到头文件STL的情况
 set(C_SRC

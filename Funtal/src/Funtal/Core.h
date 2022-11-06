@@ -5,14 +5,10 @@
 #ifndef FUNTAL_CORE_H
 #define FUNTAL_CORE_H
 
-    #define FT_PLATFORM_MACOS
-    #define PROJ_DEBUG 1
-    #define PROJ_RELEASE 0
-
 #endif //FUNTAL_CORE_H
 #pragma once
 
-#if PROJ_DEBUG
+#ifdef PROJ_DEBUG
     #define FT_ENABLE_ASSERTS
 #endif
 
@@ -52,6 +48,8 @@
 
 
 #define BIT(x) (1 << x)
+
+#define FT_BIND_EVENT_FN(fn) std::bind(&fn, this, std::placeholders::_1)
 
 // * 用于实现 MSVC 的 __debugbreak()
 #if defined(__APPLE__) && defined(__aarch64__)

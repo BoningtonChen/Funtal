@@ -8,7 +8,11 @@
 #endif //FUNTAL_IMGUILAYER_H
 #pragma once
 
-#include <Funtal/Layer.h>
+#include "Funtal/Layer.h"
+
+#include "Funtal/Events/KeyEvent.h"
+#include "Funtal/Events/MouseEvent.h"
+#include "Funtal/Events/ApplicationEvent.h"
 
 namespace Funtal
 {
@@ -22,6 +26,16 @@ namespace Funtal
         void OnDetach() override;
         void OnUpdate() override;
         void OnEvent(Event& event) override;
+
+    private:
+        bool OnMouseButtonPressedEvent(MouseButtonPressedEvent& e);
+        bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e);
+        bool OnMouseMovedEvent(MouseMovedEvent& e);
+        bool OnMouseScrolledEvent(MouseScrolledEvent& e);
+        bool OnKeyPressedEvent(KeyPressedEvent& e);
+        bool OnKeyReleasedEvent(KeyReleasedEvent& e);
+        bool OnKeyTypedEvent(KeyTypedEvent& e);
+        bool OnWindowResizeEvent(WindowResizeEvent& e);
 
     private:
         float m_Time = 0.0f;
