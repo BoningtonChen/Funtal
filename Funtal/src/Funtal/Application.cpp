@@ -10,6 +10,8 @@
 
 #include <glad/glad.h>
 
+#include "Input.h"
+
 namespace Funtal
 {
 #define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
@@ -56,11 +58,16 @@ namespace Funtal
     {
         while (m_Running)
         {
-            glClearColor(1, 0, 1, 1);
+            glClearColor(0.240f, 0.248f, 0.255f, 1);
             glClear(GL_COLOR_BUFFER_BIT);
 
             for (Layer* layer : m_LayerStack)
                 layer -> OnUpdate();
+
+            auto[xPos, yPos] = Input::GetMousePosition();
+            FT_CORE_TRACE("{0}, {1}", xPos, yPos);
+
+            m_Window -> OnUpdate();
         }
     }
 

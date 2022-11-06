@@ -49,6 +49,8 @@ namespace Funtal
         virtual void SetVSync(bool enable) = 0;
         [[nodiscard]] virtual bool IsVSync() const = 0;
 
+        [[nodiscard]] inline virtual void* GetNativeWindow() const = 0;
+
         static Window* Create( const WindowProps& props = WindowProps() );
     };
 }

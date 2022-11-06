@@ -36,6 +36,9 @@ set(PLATFORM_SRC
         Platform/Unix/macOSWindow.h
         Platform/Unix/macOSWindow.cpp
 
+        Platform/Unix/macOSInput.h
+        Platform/Unix/macOSInput.cpp
+
         # * Windows
         Platform/Windows/WindowsWindow.h
         Platform/Windows/WindowsWindow.cpp
@@ -77,6 +80,9 @@ set(FUNTAL_SRC
         Funtal/src/Funtal/Layer.cpp
         Funtal/src/Funtal/LayerStack.h
         Funtal/src/Funtal/LayerStack.cpp
+
+        Funtal/src/Funtal/Input.h
+        Funtal/src/Funtal/Input.cpp
 
         Funtal/src/Funtal/Imgui/ImGuiLayer.h
         Funtal/src/Funtal/Imgui/ImGuiLayer.cpp

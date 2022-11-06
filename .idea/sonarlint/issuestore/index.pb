@@ -5,8 +5,6 @@ f
 6Funtal/vendor/spdlog/include/spdlog/fmt/bundled/core.h,c/3/c3b4167d80e46ab75a50a5a72a448bdca1cf5c4b
 \
 ,Funtal/vendor/spdlog/include/spdlog/logger.h,4/4/4412722b8b4d0e1747055f4825683987c7cf7c65
-J
-Funtal/src/Funtal/Window.h,2/f/2f04c8eb1b0aa2e2fc0deb6919f44478903d2423
 K
 Funtal/src/Funtal/Layer.cpp,2/5/256f7e7afdfef9c9e3f648a8fab275c6976c71f7
 N
@@ -17,12 +15,8 @@ e
 5cmake-build-debug/CMakeFiles/Funtal.dir/cmake_pch.hxx,a/3/a3b666ecabc2480a5e302f87fb294cf48771e672
 \
 ,Funtal/vendor/GLAD/include/KHR/khrplatform.h,e/7/e71e95ee022bf923042888639ce856f350a50708
-V
-&Funtal/vendor/GLAD/include/glad/glad.h,c/9/c9f32953895da24857dcb7551a241e270727e037
 P
  Platform/Windows/WindowsWindow.h,d/b/db0396686661c75f71463706fb4f3c1155656892
-M
-Funtal/vendor/GLAD/src/glad.c,b/7/b77baadb0521441deee3a148374498bbc7024465
 I
 Funtal/src/Funtal/Layer.h,f/3/f37ed27d79ab7c2a9c3e8b5d5deb022b5d2b8eb2
 K
