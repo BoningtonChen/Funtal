@@ -168,13 +168,16 @@ namespace Funtal
     void ImGuiLayer::OnEvent(Event &event)
     {
         EventDispatcher dispatcher(event);
+
         dispatcher.Dispatch<MouseButtonPressedEvent>( FT_BIND_EVENT_FN(ImGuiLayer::OnMouseButtonPressedEvent) );
         dispatcher.Dispatch<MouseButtonReleasedEvent>( FT_BIND_EVENT_FN(ImGuiLayer::OnMouseButtonReleasedEvent) );
         dispatcher.Dispatch<MouseMovedEvent>( FT_BIND_EVENT_FN(ImGuiLayer::OnMouseMovedEvent) );
         dispatcher.Dispatch<MouseScrolledEvent>( FT_BIND_EVENT_FN(ImGuiLayer::OnMouseScrolledEvent) );
+
         dispatcher.Dispatch<KeyPressedEvent>( FT_BIND_EVENT_FN(ImGuiLayer::OnKeyPressedEvent) );
         dispatcher.Dispatch<KeyReleasedEvent>( FT_BIND_EVENT_FN(ImGuiLayer::OnKeyReleasedEvent) );
         dispatcher.Dispatch<KeyTypedEvent>( FT_BIND_EVENT_FN(ImGuiLayer::OnKeyTypedEvent) );
+
         dispatcher.Dispatch<WindowResizeEvent>( FT_BIND_EVENT_FN(ImGuiLayer::OnWindowResizeEvent) );
     }
 
@@ -249,7 +252,11 @@ namespace Funtal
         io.DisplaySize = ImVec2( e.GetWidth(), e.GetHeight() );
         io.DisplayFramebufferScale = ImVec2(1.0f, 1.0f);
 
-        glViewport(0, 0, e.GetWidth(), e.GetHeight());
+        /* TODO:
+         * 检查这个WindowResizeEvent的unsigned int和glViewport之间有没有冲突，
+         * 可能导致了窗口的ImGui界面和点击事件之间出现偏差
+        */
+         glViewport( 0, 0, e.GetWidth(), e.GetHeight() );
 
         return false;
     }

@@ -10,9 +10,9 @@
 
 #include "Funtal/Layer.h"
 
+#include "Funtal/Events/ApplicationEvent.h"
 #include "Funtal/Events/KeyEvent.h"
 #include "Funtal/Events/MouseEvent.h"
-#include "Funtal/Events/ApplicationEvent.h"
 
 namespace Funtal
 {
@@ -32,9 +32,11 @@ namespace Funtal
         bool OnMouseButtonReleasedEvent(MouseButtonReleasedEvent& e);
         bool OnMouseMovedEvent(MouseMovedEvent& e);
         bool OnMouseScrolledEvent(MouseScrolledEvent& e);
+
         bool OnKeyPressedEvent(KeyPressedEvent& e);
         bool OnKeyReleasedEvent(KeyReleasedEvent& e);
         bool OnKeyTypedEvent(KeyTypedEvent& e);
+
         bool OnWindowResizeEvent(WindowResizeEvent& e);
 
     private:

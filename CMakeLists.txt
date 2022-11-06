@@ -12,7 +12,7 @@ set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c23")
 # * 添加平台适配的项目预定义宏环境
 if(APPLE)
     add_definitions(-D FT_PLATFORM_MACOS -D FT_BUILD_DLL -D GLFW_INCLUDE_NONE -D FT_DEBUG)
-else(MSVC)
+else(MSVC || MINGW)
     add_definitions(-D FT_PLATFORM_WINDOWS -D FT_BUILD_DLL -D GLFW_INCLUDE_NONE -D FT_DEBUG)
 endif()
 

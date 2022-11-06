@@ -16,7 +16,7 @@
 <!-- TOC -->
 
 ## Getting Started :)
-To clone the repository with `git clone https://github.com/BoningtonChen/Funtal.git`. \
+To clone the repository with `git clone https://github.com/BoningtonChen/Funtal.git` on GitHub or `git clone https://gitee.com/bonington/Funtal.git` on Gitee. \
 If the repository was cloned non-recursively previously, use `git submodule update --init` to clone the necessary submodules.
 
 ## Version
