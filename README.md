@@ -13,6 +13,7 @@
   * [Supplementary Explanation](#supplementary-explanation)
   * [Technical Comments](#technical-comments)
   * [Open Source LICENCE for FUNTAL](#open-source-licence-for-funtal)
+  * [Copyright](#copyright)
 <!-- TOC -->
 
 ## Getting Started :)
@@ -291,4 +292,5 @@ Apache 2.0 LICENCE
 
 ```
 
+## Copyright
 © Bonity, 2022

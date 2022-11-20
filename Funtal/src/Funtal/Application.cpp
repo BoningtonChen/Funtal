@@ -20,7 +20,7 @@ namespace Funtal
 
     Application::Application()
     {
-        FT_CORE_ASSERT(!s_Instance, "Application already EXISTS!");
+        FT_CORE_ASSERT(!s_Instance, "Application already EXISTS!")
         s_Instance = this;
 
         m_Window = std::unique_ptr<Window>( Window::Create() );
@@ -63,9 +63,6 @@ namespace Funtal
 
             for (Layer* layer : m_LayerStack)
                 layer -> OnUpdate();
-
-            auto[xPos, yPos] = Input::GetMousePosition();
-            FT_CORE_TRACE("{0}, {1}", xPos, yPos);
 
             m_Window -> OnUpdate();
         }

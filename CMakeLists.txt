@@ -84,6 +84,9 @@ set(FUNTAL_SRC
         Funtal/src/Funtal/Input.h
         Funtal/src/Funtal/Input.cpp
 
+        Funtal/src/Funtal/KeyCodes.h
+        Funtal/src/Funtal/MouseButtonCodes.h
+
         Funtal/src/Funtal/Imgui/ImGuiLayer.h
         Funtal/src/Funtal/Imgui/ImGuiLayer.cpp
         )

@@ -15,12 +15,18 @@ public:
 
     void OnUpdate() override
     {
-        FT_INFO("ExampleLayer::Update");
+        if ( Funtal::Input::IsKeyPressed(FT_KEY_TAB) )
+            FT_TRACE("TAB Key is pressed!");
     }
 
     void OnEvent(Funtal::Event& event) override
     {
-        FT_TRACE("{0}", event);
+        // FT_TRACE("{0}", event);
+
+        if (event.GetEventType() == Funtal::EventType::KeyPressed)
+        {
+
+        }
     }
 };
 

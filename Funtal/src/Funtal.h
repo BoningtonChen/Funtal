@@ -34,6 +34,10 @@ extern "C"
 #include "Funtal/Layer.h"
 #include "Funtal/Log.h"
 
+#include "Funtal/Input.h"
+#include "Funtal/MouseButtonCodes.h"
+#include "Funtal/KeyCodes.h"
+
 #include "Funtal/Imgui/ImGuiLayer.h"
 
 
