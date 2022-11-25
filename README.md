@@ -44,8 +44,9 @@ Using C++, C, CMAKE, Lua.
       - GLAD
       - GLFW
       - imgui
+      - glm
     - lib
-      - Funtal
+      - libfuntal
   - #### Sandbox
     - src
   - #### Platform
