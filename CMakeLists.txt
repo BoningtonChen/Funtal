@@ -158,6 +158,13 @@ set(IMGUI_SRC
         Funtal/vendor/imgui/imstb_truetype.h
         )
 
+set(GLM_INC_DIR
+        Funtal/vendor/glm
+        )
+set(GLM_SRC
+        
+        )
+
 
 # ! 链接包含和链接目录
 include_directories(
@@ -166,6 +173,7 @@ include_directories(
         ${GLFW_INC_DIR}
         ${SPDLOG_INC_DIR}
         ${IMGUI_INC_DIR}
+        ${GLM_INC_DIR}
 
         # * 平台适配依赖
         ${PLATFORM_DIR}
@@ -184,7 +192,7 @@ link_directories(
 
 
 # ! 添加库
-add_library(funtal STATIC MODULE SHARED
+add_library(funtal SHARED
         # * 第三方源
         ${GLAD_SRC}
         ${IMGUI_SRC}
@@ -220,6 +228,7 @@ target_link_libraries(funtal
         ${GLFW_LIB}
         # * 项目依赖库
         ${FUNTAL_LIB}
+
         pthread
         )
 target_link_libraries(Funtal_App
@@ -227,6 +236,7 @@ target_link_libraries(Funtal_App
         ${GLFW_LIB}
         # * 项目库
         ${FUNTAL_LIB}
+
         pthread
         )
 
@@ -241,9 +251,9 @@ if (APPLE)
 endif()
 
 # * 设置自动化拷贝生成的库文件
-set(CMAKE_GENERATED_LIB
+set(GENERATED_LIB
         cmake-build-debug/libfuntal.a
         cmake-build-debug/libfuntal.dylib
         cmake-build-debug/libfuntal.so
         )
-execute_process(COMMAND ${CMAKE_COMMAND} -E copy_if_different ${CMAKE_GENERATED_LIB} ${FUNTAL_LIB_DIR})
+execute_process(COMMAND ${CMAKE_COMMAND} -E copy_if_different ${GENERATED_LIB} ${FUNTAL_LIB_DIR})
