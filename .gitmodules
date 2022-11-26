@@ -6,8 +6,8 @@
 	path = Funtal/vendor/GLFW
 	url = https://github.com/glfw/glfw
 
-[submodule "Funtal/vendor/imgui"]
-	path = Funtal/vendor/imgui
+[submodule "Funtal/vendor/ImGui"]
+	path = Funtal/vendor/ImGui
 	url = https://github.com/ocornut/imgui
 [submodule "Funtal/vendor/glm"]
 	path = Funtal/vendor/glm

@@ -137,25 +137,25 @@ set(GLAD_SRC
         )
 
 set(IMGUI_INC_DIR
-        Funtal/vendor/imgui
-        Funtal/vendor/imgui/backends
+        Funtal/vendor/ImGui
+        Funtal/vendor/ImGui/backends
         )
 set(IMGUI_SRC
-        Funtal/vendor/imgui/imconfig.h
+        Funtal/vendor/ImGui/imconfig.h
 
-        Funtal/vendor/imgui/imgui.h
-        Funtal/vendor/imgui/imgui.cpp
+        Funtal/vendor/ImGui/imgui.h
+        Funtal/vendor/ImGui/imgui.cpp
 
-        Funtal/vendor/imgui/imgui_internal.h
+        Funtal/vendor/ImGui/imgui_internal.h
 
-        Funtal/vendor/imgui/imgui_demo.cpp
-        Funtal/vendor/imgui/imgui_draw.cpp
-        Funtal/vendor/imgui/imgui_tables.cpp
-        Funtal/vendor/imgui/imgui_widgets.cpp
+        Funtal/vendor/ImGui/imgui_demo.cpp
+        Funtal/vendor/ImGui/imgui_draw.cpp
+        Funtal/vendor/ImGui/imgui_tables.cpp
+        Funtal/vendor/ImGui/imgui_widgets.cpp
 
-        Funtal/vendor/imgui/imstb_rectpack.h
-        Funtal/vendor/imgui/imstb_textedit.h
-        Funtal/vendor/imgui/imstb_truetype.h
+        Funtal/vendor/ImGui/imstb_rectpack.h
+        Funtal/vendor/ImGui/imstb_textedit.h
+        Funtal/vendor/ImGui/imstb_truetype.h
         )
 
 set(GLM_INC_DIR
