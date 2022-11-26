@@ -44,8 +44,6 @@ set(PLATFORM_SRC
         Platform/Windows/WindowsWindow.cpp
 
         # * OpenGL
-        Platform/OpenGL/ImGuiOpenGLRenderer.h
-        Platform/OpenGL/ImGuiOpenGLRenderer.cpp
         )
 
 # * Funtal 依赖和文件
@@ -89,6 +87,7 @@ set(FUNTAL_SRC
 
         Funtal/src/Funtal/ImGui/ImGuiLayer.h
         Funtal/src/Funtal/ImGui/ImGuiLayer.cpp
+        Funtal/src/Funtal/ImGui/ImGuiBuild.cpp
         )
 set(FUNTAL_LIB_DIR
         lib/Funtal
