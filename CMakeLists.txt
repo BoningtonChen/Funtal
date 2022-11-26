@@ -87,8 +87,8 @@ set(FUNTAL_SRC
         Funtal/src/Funtal/KeyCodes.h
         Funtal/src/Funtal/MouseButtonCodes.h
 
-        Funtal/src/Funtal/Imgui/ImGuiLayer.h
-        Funtal/src/Funtal/Imgui/ImGuiLayer.cpp
+        Funtal/src/Funtal/ImGui/ImGuiLayer.h
+        Funtal/src/Funtal/ImGui/ImGuiLayer.cpp
         )
 set(FUNTAL_LIB_DIR
         lib/Funtal
