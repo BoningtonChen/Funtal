@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(Funtal CXX C)
+project(Funtal C CXX ASM)
 
 # * 设置 C/C++ 语言版本
 set(CMAKE_CXX_STANDARD 23)
@@ -12,7 +12,9 @@ set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c23")
 # * 添加平台适配的项目预定义宏环境
 if(APPLE)
     add_definitions(-D FT_PLATFORM_MACOS -D FT_BUILD_DLL -D GLFW_INCLUDE_NONE -D FT_DEBUG)
-else(MSVC || MINGW)
+elseif(MINGW)
+    add_definitions(-D FT_PLATFORM_WINDOWS -D FT_BUILD_DLL -D GLFW_INCLUDE_NONE -D FT_DEBUG)
+elseif(MSVC)
     add_definitions(-D FT_PLATFORM_WINDOWS -D FT_BUILD_DLL -D GLFW_INCLUDE_NONE -D FT_DEBUG)
 endif()
 

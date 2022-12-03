@@ -12,7 +12,7 @@
 
 extern Funtal::Application* Funtal::CreateApplication();
 
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
     Funtal::Log::Init();
 
