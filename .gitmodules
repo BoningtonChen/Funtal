@@ -6,9 +6,13 @@
 	path = Funtal/vendor/GLFW
 	url = https://github.com/glfw/glfw
 
-[submodule "Funtal/vendor/ImGui"]
-	path = Funtal/vendor/ImGui
-	url = https://github.com/ocornut/imgui
 [submodule "Funtal/vendor/glm"]
 	path = Funtal/vendor/glm
 	url = https://github.com/g-truc/glm
+
+[submodule "Funtal/vendor/ImGui_Cherno"]
+	path = Funtal/vendor/ImGui_Cherno
+	url = https://github.com/TheCherno/imgui
+[submodule "Funtal/vendor/ImGui"]
+	path = Funtal/vendor/ImGui
+	url = https://github.com/ocornut/imgui
