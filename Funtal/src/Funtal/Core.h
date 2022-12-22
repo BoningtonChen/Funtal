@@ -13,25 +13,30 @@
 #endif
 
 #ifdef FT_PLATFORM_MACOS
-
-    #ifdef FT_BUILD_DLL
-        #define FUNTAL_API __attribute(( visibility("default") ))
-    #else
-        #define FUNTAL_API __attribute(( visibility("default") ))
+    #ifdef FT_DYNAMIC_LINK
+        #ifdef FT_BUILD_DLL
+            #define FUNTAL_API __attribute(( visibility("default") ))
+        #else
+            #define FUNTAL_API __attribute(( visibility("default") ))
+        #endif
     #endif
 
 #elif FT_PLATFORM_WINDOWS
-    #ifdef FT_BUILD_DLL
-        #define FUNTAL_API __declspec(dllimport)
-    #else
-        #define FUNTAL_API __declspec(dllexport)
+    #ifdef FT_DYNAMIC_LINK
+        #ifdef FT_BUILD_DLL
+            #define FUNTAL_API __declspec(dllimport)
+        #else
+            #define FUNTAL_API __declspec(dllexport)
+        #endif
     #endif
 
 #elif FT_PLATFORM_LINUX
-    #ifdef FT_BUILD_DLL
-        #define FUNTAL_API __attribute(( visibility("default") ))
-    #else
-        #define FUNTAL_API __attribute(( visibility("default") ))
+    #ifdef FT_DYNAMIC_LINK
+        #ifdef FT_BUILD_DLL
+            #define FUNTAL_API __attribute(( visibility("default") ))
+        #else
+            #define FUNTAL_API __attribute(( visibility("default") ))
+        #endif
     #endif
 #else
     #error Funtal UNSUPPORTED Platform, sorry!

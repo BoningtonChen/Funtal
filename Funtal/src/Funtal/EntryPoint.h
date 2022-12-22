@@ -2,6 +2,8 @@
 // Created by 陈奕锟 on 2022/10/23.
 //
 
+#include "Application.h"
+
 #ifndef FUNTAL_ENTRYPOINT_H
 #define FUNTAL_ENTRYPOINT_H
 
@@ -9,8 +11,6 @@
 #pragma once
 
 #ifdef FT_PLATFORM_MACOS
-
-extern Funtal::Application* Funtal::CreateApplication();
 
 int main(int argc, char* argv[])
 {

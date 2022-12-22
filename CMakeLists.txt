@@ -11,11 +11,11 @@ set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c23")
 
 # * 添加平台适配的项目预定义宏环境
 if(APPLE)
-    add_definitions(-D FT_PLATFORM_MACOS -D FT_BUILD_DLL -D GLFW_INCLUDE_NONE -D FT_DEBUG)
+    add_definitions(-D FT_DYNAMIC_LINK -D FT_PLATFORM_MACOS -D FT_BUILD_DLL -D GLFW_INCLUDE_NONE -D FT_DEBUG)
 elseif(MINGW)
-    add_definitions(-D FT_PLATFORM_WINDOWS -D FT_BUILD_DLL -D GLFW_INCLUDE_NONE -D FT_DEBUG)
+    add_definitions(-D FT_DYNAMIC_LINK -D FT_PLATFORM_WINDOWS -D FT_BUILD_DLL -D GLFW_INCLUDE_NONE -D FT_DEBUG)
 elseif(MSVC)
-    add_definitions(-D FT_PLATFORM_WINDOWS -D FT_BUILD_DLL -D GLFW_INCLUDE_NONE -D FT_DEBUG)
+    add_definitions(-D FT_DYNAMIC_LINK -D FT_PLATFORM_WINDOWS -D FT_BUILD_DLL -D GLFW_INCLUDE_NONE -D FT_DEBUG)
 endif()
 
 
@@ -212,7 +212,7 @@ link_directories(
 
 
 # ! 添加库
-add_library(funtal SHARED
+add_library(funtal STATIC
         # * 第三方源
         ${GLAD_SRC}
         ${IMGUI_CHERNO_SRC}
