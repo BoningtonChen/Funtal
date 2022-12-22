@@ -158,6 +158,25 @@ set(IMGUI_SRC
         Funtal/vendor/ImGui/imstb_textedit.h
         Funtal/vendor/ImGui/imstb_truetype.h
         )
+set(IMGUI_CHERNO_INC_DIR
+        Funtal/vendor/ImGui_Cherno
+        Funtal/vendor/ImGui_Cherno/backends
+        )
+set(IMGUI_CHERNO_SRC
+        Funtal/vendor/ImGui_Cherno/imgui.h
+        Funtal/vendor/ImGui_Cherno/imgui.cpp
+
+        Funtal/vendor/ImGui_Cherno/imconfig.h
+        Funtal/vendor/ImGui_Cherno/imgui_internal.h
+        Funtal/vendor/ImGui_Cherno/imstb_rectpack.h
+        Funtal/vendor/ImGui_Cherno/imstb_textedit.h
+        Funtal/vendor/ImGui_Cherno/imstb_truetype.h
+
+        Funtal/vendor/ImGui_Cherno/imgui_demo.cpp
+        Funtal/vendor/ImGui_Cherno/imgui_draw.cpp
+        Funtal/vendor/ImGui_Cherno/imgui_tables.cpp
+        Funtal/vendor/ImGui_Cherno/imgui_widgets.cpp
+        )
 
 set(GLM_INC_DIR
         Funtal/vendor/glm
@@ -173,7 +192,7 @@ include_directories(
         ${GLAD_INC_DIR}
         ${GLFW_INC_DIR}
         ${SPDLOG_INC_DIR}
-        ${IMGUI_INC_DIR}
+        ${IMGUI_CHERNO_INC_DIR}
         ${GLM_INC_DIR}
 
         # * 平台适配依赖
@@ -196,7 +215,7 @@ link_directories(
 add_library(funtal SHARED
         # * 第三方源
         ${GLAD_SRC}
-        ${IMGUI_SRC}
+        ${IMGUI_CHERNO_SRC}
 
         # * 项目源
         ${FUNTAL_SRC}
@@ -209,7 +228,7 @@ add_library(funtal SHARED
 add_executable(Funtal_App
         # * 第三方源
         ${GLAD_SRC}
-        ${IMGUI_SRC}
+        ${IMGUI_CHERNO_SRC}
 
         # * 项目源
         ${FUNTAL_SRC}
