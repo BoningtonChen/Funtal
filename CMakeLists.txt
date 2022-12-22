@@ -137,27 +137,27 @@ set(GLAD_SRC
         Funtal/vendor/GLAD/src/glad.c
         )
 
-set(IMGUI_INC_DIR
-        Funtal/vendor/ImGui
-        Funtal/vendor/ImGui/backends
-        )
-set(IMGUI_SRC
-        Funtal/vendor/ImGui/imconfig.h
-
-        Funtal/vendor/ImGui/imgui.h
-        Funtal/vendor/ImGui/imgui.cpp
-
-        Funtal/vendor/ImGui/imgui_internal.h
-
-        Funtal/vendor/ImGui/imgui_demo.cpp
-        Funtal/vendor/ImGui/imgui_draw.cpp
-        Funtal/vendor/ImGui/imgui_tables.cpp
-        Funtal/vendor/ImGui/imgui_widgets.cpp
-
-        Funtal/vendor/ImGui/imstb_rectpack.h
-        Funtal/vendor/ImGui/imstb_textedit.h
-        Funtal/vendor/ImGui/imstb_truetype.h
-        )
+#set(IMGUI_INC_DIR
+#        Funtal/vendor/ImGui
+#        Funtal/vendor/ImGui/backends
+#        )
+#set(IMGUI_SRC
+#        Funtal/vendor/ImGui/imconfig.h
+#
+#        Funtal/vendor/ImGui/imgui.h
+#        Funtal/vendor/ImGui/imgui.cpp
+#
+#        Funtal/vendor/ImGui/imgui_internal.h
+#
+#        Funtal/vendor/ImGui/imgui_demo.cpp
+#        Funtal/vendor/ImGui/imgui_draw.cpp
+#        Funtal/vendor/ImGui/imgui_tables.cpp
+#        Funtal/vendor/ImGui/imgui_widgets.cpp
+#
+#        Funtal/vendor/ImGui/imstb_rectpack.h
+#        Funtal/vendor/ImGui/imstb_textedit.h
+#        Funtal/vendor/ImGui/imstb_truetype.h
+#        )
 set(IMGUI_CHERNO_INC_DIR
         Funtal/vendor/ImGui_Cherno
         Funtal/vendor/ImGui_Cherno/backends
@@ -176,13 +176,13 @@ set(IMGUI_CHERNO_SRC
         Funtal/vendor/ImGui_Cherno/imgui_draw.cpp
         Funtal/vendor/ImGui_Cherno/imgui_tables.cpp
         Funtal/vendor/ImGui_Cherno/imgui_widgets.cpp
+
+        Funtal/vendor/ImGui_Cherno/backends/imgui_impl_opengl3.h
+        Funtal/vendor/ImGui_Cherno/backends/imgui_impl_opengl3.cpp
         )
 
 set(GLM_INC_DIR
         Funtal/vendor/glm
-        )
-set(GLM_SRC
-        
         )
 
 

@@ -24,10 +24,10 @@ namespace Funtal
 
         void OnAttach() override;
         void OnDetach() override;
-        void OnUpdate() override;
+        void OnImGuiRender() override;
 
-        void Begin();
-        void End();
+        static void Begin();
+        static void End();
 
     private:
         float m_Time = 0.0f;

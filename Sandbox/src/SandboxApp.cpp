@@ -56,7 +56,6 @@ public:
     Sandbox()
     {
         PushLayer( new ExampleLayer() );
-        PushOverlay( new Funtal::ImGuiLayer() );
     }
     ~Sandbox() override = default;
 };
