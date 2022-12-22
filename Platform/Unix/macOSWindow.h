@@ -9,8 +9,10 @@
 #pragma once
 
 #include "Funtal/Window.h"
+#include "Funtal/Renderer/GraphicsContext.h"
 
 #include <GLFW/glfw3.h>
+
 
 namespace Funtal
 {
@@ -38,6 +40,7 @@ namespace Funtal
 
     private:
         GLFWwindow* m_Window;
+        GraphicsContext* m_Context;
 
         struct WindowData
         {

@@ -9,7 +9,7 @@
 #include "Funtal/Events/MouseEvent.h"
 #include "Funtal/Events/KeyEvent.h"
 
-#include <glad/glad.h>
+#include "OpenGLContext.h"
 
 namespace Funtal
 {
@@ -57,7 +57,7 @@ namespace Funtal
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, 1);
 
         m_Window = glfwCreateWindow(
                 (int)props.Width, (int)props.Height,
@@ -65,14 +65,11 @@ namespace Funtal
                 nullptr, nullptr
                 );
 
-        glfwMakeContextCurrent(m_Window);
-
-        int status = gladLoadGLLoader( (GLADloadproc)glfwGetProcAddress );
-        FT_CORE_ASSERT(status, "Failed to initialize GLAD!");
+        m_Context = new OpenGLContext(m_Window);
+        m_Context -> Init();
 
         glfwSetWindowUserPointer(m_Window, &m_Data);
         SetVSync(true);
-
 
         // * Set GLFW Callback
         glfwSetWindowSizeCallback(
@@ -186,6 +183,8 @@ namespace Funtal
     void macOSWindow::OnUpdate()
     {
         glfwPollEvents();
+        m_Context -> SwapBuffers();
+
         glfwSwapBuffers(m_Window);
     }
 

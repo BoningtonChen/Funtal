@@ -46,6 +46,8 @@ set(PLATFORM_SRC
         Platform/Windows/WindowsWindow.cpp
 
         # * OpenGL
+        Platform/OpenGL/OpenGLContext.h
+        Platform/OpenGL/OpenGLContext.cpp
         )
 
 # * Funtal 依赖和文件
@@ -90,6 +92,8 @@ set(FUNTAL_SRC
         Funtal/src/Funtal/ImGui/ImGuiLayer.h
         Funtal/src/Funtal/ImGui/ImGuiLayer.cpp
         Funtal/src/Funtal/ImGui/ImGuiBuild.cpp
+
+        Funtal/src/Funtal/Renderer/GraphicsContext.h
         )
 set(FUNTAL_LIB_DIR
         lib/Funtal
@@ -137,27 +141,6 @@ set(GLAD_SRC
         Funtal/vendor/GLAD/src/glad.c
         )
 
-#set(IMGUI_INC_DIR
-#        Funtal/vendor/ImGui
-#        Funtal/vendor/ImGui/backends
-#        )
-#set(IMGUI_SRC
-#        Funtal/vendor/ImGui/imconfig.h
-#
-#        Funtal/vendor/ImGui/imgui.h
-#        Funtal/vendor/ImGui/imgui.cpp
-#
-#        Funtal/vendor/ImGui/imgui_internal.h
-#
-#        Funtal/vendor/ImGui/imgui_demo.cpp
-#        Funtal/vendor/ImGui/imgui_draw.cpp
-#        Funtal/vendor/ImGui/imgui_tables.cpp
-#        Funtal/vendor/ImGui/imgui_widgets.cpp
-#
-#        Funtal/vendor/ImGui/imstb_rectpack.h
-#        Funtal/vendor/ImGui/imstb_textedit.h
-#        Funtal/vendor/ImGui/imstb_truetype.h
-#        )
 set(IMGUI_CHERNO_INC_DIR
         Funtal/vendor/ImGui_Cherno
         Funtal/vendor/ImGui_Cherno/backends
