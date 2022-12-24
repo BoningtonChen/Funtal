@@ -12,7 +12,7 @@
 
 #ifdef FT_PLATFORM_MACOS
 
-int main(int argc, char* argv[])
+int main(int argc, char** argv)
 {
     Funtal::Log::Init();
 
