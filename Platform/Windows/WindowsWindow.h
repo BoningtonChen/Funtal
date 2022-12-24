@@ -18,7 +18,7 @@ namespace Funtal
     {
     public:
         explicit WindowsWindow(const WindowProps& props);
-        virtual ~WindowsWindow();
+        ~WindowsWindow() override;
 
         void OnUpdate() override;
 
