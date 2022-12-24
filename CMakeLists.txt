@@ -5,6 +5,11 @@ project(Funtal C CXX ASM)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_C_STANDARD 23)
 
+find_package(glm CONFIG REQUIRED)
+find_package(glfw3 CONFIG REQUIRED)
+find_package(GLEW CONFIG REQUIRED)
+find_package(spdlog CONFIG REQUIRED)
+
 # * 用于添加动态链接库和 C/C++ 混编
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++23 -fms-extensions")
 set (CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -std=c23")
@@ -17,7 +22,6 @@ elseif(MINGW)
 elseif(MSVC)
     add_definitions(-D FT_PLATFORM_WINDOWS -D GLFW_INCLUDE_NONE -D FT_DEBUG)
 endif()
-
 
 # * 强制使用CXX编译.c文件，防止出现C++出现找不到头文件STL的情况
 set(C_SRC
