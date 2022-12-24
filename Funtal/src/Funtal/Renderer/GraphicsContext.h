@@ -10,7 +10,7 @@
 
 namespace Funtal
 {
-    class GraphicsContext
+    class FUNTAL_API GraphicsContext
     {
     public:
         virtual void Init() = 0;

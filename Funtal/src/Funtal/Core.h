@@ -19,6 +19,8 @@
         #else
             #define FUNTAL_API __attribute(( visibility("default") ))
         #endif
+    #else
+        #define FUNTAL_API
     #endif
 
 #elif FT_PLATFORM_WINDOWS
@@ -28,6 +30,8 @@
         #else
             #define FUNTAL_API __declspec(dllexport)
         #endif
+    #else
+        #define FUNTAL_API
     #endif
 
 #elif FT_PLATFORM_LINUX
@@ -37,6 +41,8 @@
         #else
             #define FUNTAL_API __attribute(( visibility("default") ))
         #endif
+    #else
+        #define FUNTAL_API
     #endif
 #else
     #error Funtal UNSUPPORTED Platform, sorry!

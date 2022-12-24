@@ -10,11 +10,11 @@
 
 #include "Funtal/Renderer/GraphicsContext.h"
 
-struct GLFWwindow;
+struct FUNTAL_API GLFWwindow;
 
 namespace Funtal
 {
-    class OpenGLContext : public GraphicsContext
+    class FUNTAL_API OpenGLContext : public GraphicsContext
     {
     public:
         explicit OpenGLContext(GLFWwindow* windowHandle);

@@ -24,28 +24,40 @@
 #include "Funtal/Log.h"
 
 #ifdef FT_PLATFORM_MACOS
-#ifdef FT_BUILD_DLL
-        #define FUNTAL_API __attribute(( visibility("default") ))
+    #ifdef FT_DYNAMIC_LINK
+        #ifdef FT_BUILD_DLL
+            #define FUNTAL_API __attribute(( visibility("default") ))
+        #else
+            #define FUNTAL_API __attribute(( visibility("default") ))
+        #endif
     #else
-        #define FUNTAL_API __attribute(( visibility("default") ))
+        #define FUNTAL_API
     #endif
 
 #elif FT_PLATFORM_WINDOWS
     #include <Windows.h>
-#ifdef FT_BUILD_DLL
-        #define FUNTAL_API __declspec(dllimport)
+    #ifdef FT_DYNAMIC_LINK
+        #ifdef FT_BUILD_DLL
+            #define FUNTAL_API __declspec(dllimport)
+        #else
+            #define FUNTAL_API __declspec(dllexport)
+        #endif
     #else
-        #define FUNTAL_API __declspec(dllexport)
+        #define FUNTAL_API
     #endif
 
 #elif FT_PLATFORM_UNIX
-#ifdef FT_BUILD_DLL
-        #define FUNTAL_API __attribute(( visibility("default") ))
+    #ifdef FT_DYNAMIC_LINK
+        #ifdef FT_BUILD_DLL
+            #define FUNTAL_API __attribute(( visibility("default") ))
+        #else
+            #define FUNTAL_API __attribute(( visibility("default") ))
+        #endif
     #else
-        #define FUNTAL_API __attribute(( visibility("default") ))
+        #define FUNTAL_API
     #endif
 #else
-#error Funtal UNSUPPORTED Platform, sorry!
+    #error Funtal UNSUPPORTED Platform, sorry!
 #endif
 
 #define BIT(x) ( 1 << (x) )
