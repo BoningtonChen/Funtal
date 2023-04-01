@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(Funtal C CXX ASM)
+project(Funtal C CXX)
 
 # * 设置 C/C++ 语言版本
 set(CMAKE_CXX_STANDARD 23)
