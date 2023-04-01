@@ -1,0 +1,4 @@
+/Users/bonington/CLionProjects/Funtal/cmake-build-relwithdebinfo/CMakeFiles/funtal.dir
+/Users/bonington/CLionProjects/Funtal/cmake-build-relwithdebinfo/CMakeFiles/Funtal_App.dir
+/Users/bonington/CLionProjects/Funtal/cmake-build-relwithdebinfo/CMakeFiles/edit_cache.dir
+/Users/bonington/CLionProjects/Funtal/cmake-build-relwithdebinfo/CMakeFiles/rebuild_cache.dir

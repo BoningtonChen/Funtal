@@ -1,0 +1,5 @@
+/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/Applications/CLion.app/Contents/bin/ninja/mac/ninja -G Ninja -S /Users/bonington/CLionProjects/Funtal -B /Users/bonington/CLionProjects/Funtal/cmake-build-debug
+Error: Target (for copy_if_different command) "lib/Funtal" is not a directory.
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /Users/bonington/CLionProjects/Funtal/cmake-build-debug

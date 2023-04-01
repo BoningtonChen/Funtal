@@ -1,0 +1,4 @@
+/Users/bonington/CLionProjects/Funtal/cmake-build-minsizerel/CMakeFiles/funtal.dir
+/Users/bonington/CLionProjects/Funtal/cmake-build-minsizerel/CMakeFiles/Funtal_App.dir
+/Users/bonington/CLionProjects/Funtal/cmake-build-minsizerel/CMakeFiles/edit_cache.dir
+/Users/bonington/CLionProjects/Funtal/cmake-build-minsizerel/CMakeFiles/rebuild_cache.dir
