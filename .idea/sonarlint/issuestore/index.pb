@@ -99,19 +99,5 @@ g
 7cmake-build-release/CMakeFiles/funtal.dir/cmake_pch.hxx,b/a/ba90ac84b269cf81300e3f27a50e9d9a2c1e7f4d
 V
 &Funtal/src/Funtal/ImGui/ImGuiLayer.cpp,3/6/364107b73b8bcaae8ff374b1691a6c51e92e0d95
-N
-Funtal/src/Funtal/LayerStack.h,7/e/7e36d0364594f3f1987ffb600bb50bd9ecd2b222
-P
- Funtal/src/Funtal/LayerStack.cpp,2/a/2a538f1d202538c0207ee97ae28b92426b7dc3f4
-J
-Funtal/src/Funtal/Window.h,2/f/2f04c8eb1b0aa2e2fc0deb6919f44478903d2423
-H
-Funtal/src/Funtal/Core.h,0/0/00549986696fc2cc60884b20ec27488f9ab7c639
 T
 $Funtal/src/Funtal/MouseButtonCodes.h,7/6/760abe696db7381b3a83de17467eaf0027f4ebb8
-N
-Funtal/src/Funtal/EntryPoint.h,6/8/686d6b7e70845c335660402745609001e754edc5
-R
-"Platform/Windows/WindowsWindow.cpp,5/8/587f16b62d375f75ff25857f252c156ce072238e
-K
-Platform/Unix/macOSWindow.h,4/f/4f74125c55b092b8fbcd537cabdd1e76efb01864
