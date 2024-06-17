@@ -1,0 +1,3 @@
+[submodule "Funtal/vendor/spdlog"]
+	path = Funtal/vendor/spdlog
+	url = https://github.com/gabime/spdlog
