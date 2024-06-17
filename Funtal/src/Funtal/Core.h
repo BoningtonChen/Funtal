@@ -10,3 +10,4 @@
 	#error Funtal now only supports WINDOWS! 
 #endif
 
+#define BIT(x) (1 << x)

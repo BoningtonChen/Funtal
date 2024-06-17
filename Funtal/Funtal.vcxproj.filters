@@ -19,6 +19,10 @@
     <ClInclude Include="src\Funtal\Log.h">
       <Filter>Funtal</Filter>
     </ClInclude>
+    <ClInclude Include="src\Funtal\Events\Event.h" />
+    <ClInclude Include="src\Funtal\Events\KeyEvent.h" />
+    <ClInclude Include="src\Funtal\Events\MouseEvent.h" />
+    <ClInclude Include="src\Funtal\Events\Application.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Funtal\Application.cpp">

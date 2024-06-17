@@ -146,10 +146,14 @@
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Funtal\Events\Application.h" />
+    <ClInclude Include="src\Funtal\Events\Event.h" />
     <ClInclude Include="src\Funtal.h" />
     <ClInclude Include="src\Funtal\Application.h" />
     <ClInclude Include="src\Funtal\Core.h" />
     <ClInclude Include="src\Funtal\EntryPoint.h" />
+    <ClInclude Include="src\Funtal\Events\KeyEvent.h" />
+    <ClInclude Include="src\Funtal\Events\MouseEvent.h" />
     <ClInclude Include="src\Funtal\Log.h" />
   </ItemGroup>
   <ItemGroup>

@@ -4,15 +4,9 @@
 class Sandbox : public Funtal::Application
 {
 public:
-	Sandbox()
-	{
-		
-	}
+	Sandbox() = default;
 
-	~Sandbox()
-	{
-		
-	}
+	~Sandbox() = default;
 };
 
 Funtal::Application* Funtal::CreateApplication()
