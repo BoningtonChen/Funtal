@@ -4,6 +4,9 @@
     <Filter Include="Funtal">
       <UniqueIdentifier>{CF9FABB3-BB41-D689-A4FC-E9DD903D5DDA}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Funtal\Events">
+      <UniqueIdentifier>{D38C333D-3F4D-AF73-0888-F8F07407F44F}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Funtal.h" />
@@ -16,13 +19,22 @@
     <ClInclude Include="src\Funtal\EntryPoint.h">
       <Filter>Funtal</Filter>
     </ClInclude>
+    <ClInclude Include="src\Funtal\Events\Application.h">
+      <Filter>Funtal\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Funtal\Events\Event.h">
+      <Filter>Funtal\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Funtal\Events\KeyEvent.h">
+      <Filter>Funtal\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Funtal\Events\MouseEvent.h">
+      <Filter>Funtal\Events</Filter>
+    </ClInclude>
     <ClInclude Include="src\Funtal\Log.h">
       <Filter>Funtal</Filter>
     </ClInclude>
-    <ClInclude Include="src\Funtal\Events\Event.h" />
-    <ClInclude Include="src\Funtal\Events\KeyEvent.h" />
-    <ClInclude Include="src\Funtal\Events\MouseEvent.h" />
-    <ClInclude Include="src\Funtal\Events\Application.h" />
+    <ClInclude Include="src\ftpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Funtal\Application.cpp">
@@ -31,5 +43,6 @@
     <ClCompile Include="src\Funtal\Log.cpp">
       <Filter>Funtal</Filter>
     </ClCompile>
+    <ClCompile Include="src\ftpch.cpp" />
   </ItemGroup>
 </Project>

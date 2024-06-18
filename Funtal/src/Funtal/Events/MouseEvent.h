@@ -2,8 +2,6 @@
 
 #include "Event.h"
 
-#include <sstream>
-
 namespace Funtal
 {
 	class FUNTAL_API MouseMovedEvent : public Event

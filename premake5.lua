@@ -18,6 +18,9 @@ project "Funtal"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "ftpch.h"
+	pchsource "Funtal/src/ftpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
@@ -26,13 +29,14 @@ project "Funtal"
 
 	includedirs
 	{
+		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include"
 	}
 
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
-		systemversion "10.0.26100.0"
+		systemversion "latest"
 
 	defines
 	{
@@ -85,7 +89,7 @@ project "Sandbox"
 	filter "system:windows"
 		cppdialect "C++17"
 		staticruntime "On"
-		systemversion "10.0.22621.0"
+		systemversion "latest"
 
 	defines
 	{

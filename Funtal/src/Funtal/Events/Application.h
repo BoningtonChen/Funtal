@@ -1,8 +1,7 @@
 #pragma once
 
-#include "Event.h"
-
-#include <sstream>
+#include "Core.h"
+#include "Events/Event.h"
 
 namespace Funtal
 {
